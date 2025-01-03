@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Handwriting';
+    src: url('/fonts/Caveat-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'Handwriting';
+    src: url('/fonts/Caveat-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+}
+
+.translation, .handwriting-translation {
+  font-family: 'Handwriting', cursive;
+  font-size: 1rem; /* Adjust to match your text size */
+  line-height: 1.5; /* Match the original text's line height */
+  white-space: nowrap; /* Prevent text wrapping */
+  position: absolute; /* Ensure it positions above the text */
+  max-width: 100%; /* Prevent exceeding container width */
+  background-color: rgba(255, 0, 0, 0.2); /* Light red background for debugging */
+  border-radius: 4px; /* Optional: Add rounded corners for better appearance */
+  padding: 2px 4px; /* Add padding for better readability */
+  z-index: 1000; /* Ensure it appears above the text */
+  opacity: 1; /* Ensure visibility */
+  visibility: visible; /* Ensure it's not hidden */
+  outline: 1px solid red; /* Add debugging border */
+}
+
+.prose span {
+  display: inline-block; /* Prevent stacking of individual spans */
+  vertical-align: baseline; /* Align text baseline */
+}
+
+.translation-container {
+  position: relative; /* Keep translations relative to this container */
+  overflow: hidden; /* Ensure translations don't overflow */
+  border: 1px solid blue; /* Add a blue border to the container for debugging */
+}
